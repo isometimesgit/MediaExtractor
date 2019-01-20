@@ -4,8 +4,8 @@
     "description": "Extracts media related urls to the clipboard",
     "version": "1.0",
     "icons": {
-        "48": "/assets/icons/main-icon.png",
-        "96": "/assets/icons/main-icon.png"
+        "48": "/icons/icon.png",
+        "96": "/icons/icon@2x.png"
     },
     "background": {
         "scripts": [
@@ -24,11 +24,6 @@
         "storage",
         "clipboardWrite"
     ],
-    "browser_action": {
-        "default_icon": {
-            "48": "/assets/icons/main-icon.png"
-        }
-    },
     "applications": {
         "gecko": {
             "id": "mediaextractor@example.com"
