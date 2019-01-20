@@ -1,0 +1,106 @@
+<!DOCTYPE doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>SMRemote | Settings</title>
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+        integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+        crossorigin="anonymous">
+    <style>
+        header{
+        background-color: rgba(0,0,0,.3);
+        color:#fff;
+        font-weight: bolder;
+    }
+</style>
+</head>
+
+<body>
+    <header>
+        <div class="container clearfix py-2">
+            Settings<button id="open-remote" class="btn btn-sm btn-outline-light float-right">open remote</button>
+        </div>
+    </header>
+    <main class="container py-3" role="main">
+        <form>
+            <div class="row">
+                <div class="col-md">
+                    <div class="form-group">
+                        <label for="serverURL">Web Socket Server</label>
+                        <input type="text" class="form-control" id="serverURL" placeholder="ws://192.168.0.1:8080">
+                        <small class="form-text text-muted">The server must be accessible from your device
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <label for="serverKey">Server Key</label>
+                        <input type="text" class="form-control" id="serverKey" placeholder="zM34TdLS">
+                        <small class="form-text text-muted">Must match key specified when starting server
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="checkbox" id="disable" class="form-check-input" value="">Disable
+                            </label>
+                        </div>
+                        <small class="form-text text-muted">Disable intercepting all requests</small>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="checkbox" id="noremote" class="form-check-input" value="">Hide remote
+                                control
+                            </label>
+                        </div>
+                        <small class="form-text text-muted">Bypass displaying remote control and play</small>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="checkbox" id="ignore" class="form-check-input" value="">Ignore domain
+                                whitelist
+                            </label>
+                        </div>
+                        <small class="form-text text-muted">Intercept from all domains</small>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="checkbox" id="closetab" class="form-check-input" value="">Close tab
+                            </label>
+                        </div>
+                        <small class="form-text text-muted">Close tab that matched request</small>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check-inline">
+                            <label class="form-check-label">
+                                <input type="checkbox" id="clipboard" class="form-check-input" value="">Copy to
+                                clipboard
+                            </label>
+                        </div>
+                        <small class="form-text text-muted">Copy matched url to clipboard</small>
+                    </div>
+                </div>
+                <div class="col-md">
+
+                    <div class="form-group">
+                        <label for="extensions">Extension whitelist</label>
+                        <textarea class="form-control" id="extensions" rows="6" placeholder="mp4"></textarea>
+                        <small class="form-text text-muted">Intercept file extensions (seperated by new lines)</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="whitelist">Domain whitelist</label>
+                        <textarea rows="6" class="form-control" id="whitelist" placeholder="http://openload.co"></textarea>
+                        <small class="form-text text-muted">Intercept from domains (seperated by new lines)</small>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </main>
+    <script src="options.js"></script>
+</body>
+
+</html>
