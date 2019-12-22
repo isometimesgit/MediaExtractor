@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "MediaExtractor",
-    "description": "Extract url from request with media file extension to clipboard",
+    "description": "Extract url from browser request with media file extension(s) to clipboard",
     "version": "1.1.0",
     "icons": {
         "24": "/assets/icon/icon-dark.svg"
