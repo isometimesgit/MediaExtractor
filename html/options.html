@@ -1,0 +1,45 @@
+<!DOCTYPE doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
+    <title>MediaExtractor | Settings</title>
+    <link href="/css/milligram.min.css" rel="stylesheet">
+</head>
+
+<body style="margin:0;">
+    <header style="background-color: #606c76; color:#fff; font-weight: 500;padding: 0 .4rem;text-align:center;">
+        MediaExtractor Settings
+    </header>
+    <main style="padding: 1rem 1rem 0 1rem;" role="main">
+        <form style="margin-bottom: 0;">
+            <fieldset>
+                <div class="row">
+                    <div class="column">
+                        <input type="checkbox" id="ignore" />
+                        <label class="label-inline" for="ignore">ignore whitelist</label><br />
+                        <input type="checkbox" id="closetab" />
+                        <label class="label-inline" for="closetab">close tab</label><br />
+                        <input type="checkbox" id="disable" />
+                        <label class="label-inline" for="disable">disable</label>
+                    </div>
+                    <div class="column">
+                        <label for="whitelist">domain whitelist</label>
+                        <textarea id="whitelist" placeholder="videosite1.com&#x0a;videosite2.com"></textarea>
+                    </div>
+                    <div class="column">
+                        <label for="extensions">url file extensions</label>
+                        <textarea style="margin-bottom: 0;" id="extensions"
+                            placeholder="mp4&#x0a;avi&#x0a;mkv&#x0a;m3u8"></textarea>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+    <script src="/js/settings.js"></script>
+    <script src="/js/util.js"></script>
+    <script src="/js/options.js"></script>
+</body>
+
+</html>
