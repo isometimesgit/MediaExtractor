@@ -12,6 +12,7 @@ const getExtensionFromUrl = url => {
     return url ? (new URL(url)).pathname.split('.').pop().toLowerCase() : null;
 }
 const setIcon = settings => {
+    
     if (settings.disable) {
         browser.browserAction.setIcon({ path: '/assets/icon/icon-dark.svg' });
     } else {
