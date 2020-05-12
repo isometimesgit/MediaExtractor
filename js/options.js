@@ -1,6 +1,6 @@
 "use strict";
 
-const saveOptions = evt => {
+const saveOptions = _ => {
     browser.storage.sync.set({
         whitelist: Util.split(document.querySelector("#whitelist").value),
         extensions: Util.split(document.querySelector("#extensions").value),

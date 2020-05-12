@@ -11,6 +11,13 @@ const getExtensionFromUrl = url => {
 
     return url ? (new URL(url)).pathname.split('.').pop().toLowerCase() : null;
 }
+const setIcon = settings => {
+    if (settings.disable) {
+        browser.browserAction.setIcon({ path: '/assets/icon/icon-dark.svg' });
+    } else {
+        browser.browserAction.setIcon({ path: '/assets/icon/icon-on.svg' });
+    }
+}
 // handlers
 const onRequestHandler = request => {
 
@@ -41,21 +48,14 @@ const onChangedHandler = (changes, area) => {
 
     browser.storage.sync.get(defaultSettings).then(store => {
         settings = store;
+        setIcon(settings);
     });
 };
 // register handlers
 browser.storage.sync.get(defaultSettings).then(store => {
 
     settings = store;
-    // migrate old data format if needed
-    if (!Array.isArray(settings.whitelist)) {
-        settings.whitelist = Util.split(settings.whitelist);
-        browser.storage.sync.set({ whitelist: settings.whitelist });
-    }
-    if (!Array.isArray(settings.extensions)) {
-        settings.extensions = Util.split(settings.extensions);
-        browser.storage.sync.set({ extensions: settings.extensions });
-    }
+    setIcon(settings);
     chrome.storage.onChanged.addListener(onChangedHandler);
     chrome.webRequest.onBeforeRequest.addListener(onRequestHandler, {
         urls: ["<all_urls>"]
